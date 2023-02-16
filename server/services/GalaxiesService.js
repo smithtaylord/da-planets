@@ -2,7 +2,7 @@ import { dbContext } from "../db/DbContext.js"
 
 class GalaxiesService {
     async getGalaxies() {
-        const galaxies = await dbContext.Galaxies.find()
+        const galaxies = await dbContext.Galaxies.find().populate('planetCount')
         return galaxies
     }
 
